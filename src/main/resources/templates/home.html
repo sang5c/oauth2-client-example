@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    function oauthLogin() {
+        const baseUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+        const scopes = [
+            "https://www.googleapis.com/auth/calendar.readonly",
+            // "https://www.googleapis.com/auth/calendar",
+            // "https://www.googleapis.com/auth/userinfo.email",
+            // "https://www.googleapis.com/auth/userinfo.profile"
+        ]
+        const params = {
+            scope: scopes.join(" "),
+            response_type: "code",
+            client_id: "709278041525-btp1d4riu186mg0h35a48vtrt5t6rfkh.apps.googleusercontent.com",
+            redirect_uri: "http://localhost:8080/example"
+        };
+
+        let querystring = makeQuerystring(params);
+        querystring = encodeURI(querystring);
+        console.log("click");
+        location.href = baseUrl + "?" + querystring;
+    }
+
+    function makeQuerystring(params) {
+        return Object.keys(params)
+            .map(k => k + '=' + params[k])
+            .join('&');
+    }
+
+</script>
+<button onclick="oauthLogin();">
+    구글 로그인
+</button>
+
+</body>
+</html>
