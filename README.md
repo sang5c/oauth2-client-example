@@ -3,9 +3,6 @@
 - [Spring boot mvc](https://spring.io/guides/gs/serving-web-content/)
 - https://www.joinc.co.kr/w/man/12/oAuth2/Google
 
-### 명근이한테 물어보기
-- https://developers.google.com/identity/sign-in/web
-
 ## Google OAuth2 login 프로세스
 - https://developers.google.com/identity/protocols/oauth2/web-server#httprest_1
   https://developers.google.com/calendar/api/v3/reference/calendarList/list
